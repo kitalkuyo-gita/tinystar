@@ -1,4 +1,4 @@
-﻿body.page-topics.page-topic-detail #analysisCard { margin-top: 12px; }
+body.page-topics.page-topic-detail #analysisCard { margin-top: 12px; }
 
 body.page-topics.page-topic-detail #newsCard { margin-top: 12px; }
 
@@ -119,7 +119,7 @@ body.page-topics.page-topic-detail .topic-header .meta .tag-heat::before { backg
 body.page-topics.page-topic-detail .topic-summary { margin-top: 16px; padding: 15px 16px; border-radius: 16px; background: color-mix(in srgb, var(--bg-card) 82%, var(--primary-light)); box-shadow: none;
 }
 
-body.page-topics.page-topic-detail .grid { gap: 16px; align-items: start;
+body.page-topics.page-topic-detail .grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr); gap: 16px; align-items: start;
 }
 
 body.page-topics.page-topic-detail .card { border-radius: 18px; padding: 16px; background:
@@ -311,9 +311,6 @@ body.page-topics.page-topic-detail .source-link { font-weight: 650;
 
 body.page-topics.page-topic-detail .topic-header,
 body.page-topics.page-topic-detail .card { border-radius: 22px; box-shadow: 0 16px 38px color-mix(in oklch, var(--text-main) 8%, transparent);
-}
-
-body.page-topics.page-topic-detail .grid { grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
 }
 
 body.page-topics.page-topic-detail .topic-timeline-card { max-height: 620px;
