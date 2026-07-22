@@ -3,7 +3,7 @@
 {% block title %}专题详情 - {{ settings.APP_NAME }}{% endblock %}
 {% block body_class %}page-topic-detail{% endblock %}
 {% block head %}
-    <link rel="stylesheet" href="/static/css/pages/topic-detail.css?version=v0.1.8.6">
+    <link rel="stylesheet" href="/static/css/pages/topic-detail.css?version=v0.1.8.9">
     <script src="/static/echarts.min.js"></script>
 {% endblock %}
 
@@ -141,5 +141,5 @@
 {% block scripts %}
 <script src="/static/marked.min.js"></script>
 <script id="page-data" type="application/json">{{ {"topicId": topic_id} | tojson }}</script>
-<script src="/static/js/pages/topic_detail.js?version=v0.1.8.6"></script>
+<script src="/static/js/pages/topic_detail.js?version=v0.1.8.7"></script>
 {% endblock %}

@@ -255,6 +255,7 @@ const topicDetailPageData = topicDetailPageDataEl ? JSON.parse(topicDetailPageDa
     function renderTimeline(timeline) {
         const timelineEl = document.getElementById("timeline");
         timelineEl.innerHTML = "";
+        timelineEl.scrollTop = 0;
         if (!timeline.length) {
             timelineEl.appendChild(el("div", { class: "text", text: "暂无时间轴条目。" }));
             return;

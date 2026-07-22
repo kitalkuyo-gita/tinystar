@@ -1,3 +1,4 @@
+/* 本文件定义专题详情页的内容布局、时间轴、趋势图表和相关新闻样式。 */
 body.page-topics.page-topic-detail #analysisCard { margin-top: 12px; }
 
 body.page-topics.page-topic-detail #newsCard { margin-top: 12px; }
@@ -126,7 +127,7 @@ body.page-topics.page-topic-detail .card { border-radius: 18px; padding: 16px; b
         linear-gradient(180deg, color-mix(in srgb, var(--bg-card) 88%, var(--bg-soft)), var(--bg-card)); box-shadow: var(--shadow);
 }
 
-body.page-topics.page-topic-detail .card-head { align-items: flex-start; padding-bottom: 10px; border-bottom: 1px solid color-mix(in srgb, var(--border-color) 72%, transparent);
+body.page-topics.page-topic-detail .card-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid color-mix(in srgb, var(--border-color) 72%, transparent);
 }
 
 body.page-topics.page-topic-detail .card-title { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; color: var(--text-main);
@@ -155,7 +156,7 @@ body.page-topics.page-topic-detail .topic-record-card .text { max-width: 78ch; f
 body.page-topics.page-topic-detail .topic-record-card .markdown-body > :first-child { margin-top: 0;
 }
 
-body.page-topics.page-topic-detail .topic-timeline-card { position: sticky; top: 78px; overflow: hidden; padding: 14px; background:
+body.page-topics.page-topic-detail .topic-timeline-card { position: relative; overflow: visible; padding: 14px; background:
         radial-gradient(circle at 100% 0, color-mix(in srgb, var(--primary-color) 10%, transparent), transparent 36%),
         var(--bg-card);
 }
@@ -166,13 +167,7 @@ body.page-topics.page-topic-detail .topic-timeline-card .card-head { align-items
 body.page-topics.page-topic-detail .topic-timeline-card .btn-mini { min-height: 30px; padding: 4px 9px; font-size: 0.76rem; white-space: nowrap;
 }
 
-body.page-topics.page-topic-detail .timeline { gap: 0; max-height: calc(100vh - 188px); margin-top: 2px; padding: 2px 6px 72px 12px; overflow-y: auto; scrollbar-width: thin;
-}
-
-body.page-topics.page-topic-detail .timeline::-webkit-scrollbar { width: 6px;
-}
-
-body.page-topics.page-topic-detail .timeline::-webkit-scrollbar-thumb { border-radius: 999px; background: color-mix(in srgb, var(--primary-color) 24%, var(--border-color));
+body.page-topics.page-topic-detail .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 10px; padding: 4px 6px 8px 12px; overflow: visible;
 }
 
 body.page-topics.page-topic-detail .tl-item { position: relative; padding: 0 0 14px 16px; border-left: 2px solid color-mix(in srgb, var(--primary-color) 22%, var(--border-color));
@@ -271,7 +266,7 @@ body.page-topics.page-topic-detail .source-link { font-weight: 650;
 
     body.page-topics.page-topic-detail .topic-timeline-card { position: relative; top: auto; max-height: none;}
 
-    body.page-topics.page-topic-detail .timeline { max-height: 520px;}
+    body.page-topics.page-topic-detail .timeline { max-height: none;}
 
     body.page-topics.page-topic-detail .trend-metrics { grid-template-columns: repeat(3, minmax(0, 1fr));}
 }
@@ -492,5 +487,135 @@ body.page-index .meta-left .tag-heat,
 body.page-report .meta-left .tag-heat,
 body.page-topics .topic-header .meta .tag-heat,
 body.page-topics.page-topic-detail .topic-header .meta .tag-heat { color: color-mix(in srgb, var(--heat-color) 88%, var(--text-main));
+}
+
+/* 专题详情页最终布局：补齐独立页面结构并统一内容间距。 */
+body.page-topics.page-topic-detail .page-wrap { padding-bottom: 64px;
+}
+
+body.page-topics.page-topic-detail .topic-header { border: 1px solid color-mix(in srgb, var(--border-color) 58%, var(--primary-color));
+}
+
+body.page-topics.page-topic-detail .topic-name { font-weight: 900; line-height: 1.32;
+}
+
+body.page-topics.page-topic-detail .topic-header .meta { display: flex; align-items: center; flex-wrap: wrap;
+}
+
+body.page-topics.page-topic-detail .grid { margin-top: 20px; gap: 20px;
+}
+
+body.page-topics.page-topic-detail .card { border: 1px solid color-mix(in srgb, var(--border-color) 82%, transparent);
+}
+
+body.page-topics.page-topic-detail .card-title { font-size: 1rem; font-weight: 900; line-height: 1.35;
+}
+
+body.page-topics.page-topic-detail .card-head { display: flex; justify-content: space-between; margin-bottom: 14px;
+}
+
+body.page-topics.page-topic-detail .btn-mini { display: inline-flex; align-items: center; justify-content: center; border: 1px solid color-mix(in srgb, var(--border-color) 58%, var(--primary-color)); font-weight: 800; transition: color 0.18s ease, border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+}
+
+body.page-topics.page-topic-detail .btn-mini:hover { border-color: color-mix(in srgb, var(--primary-color) 52%, var(--border-color)); background: color-mix(in srgb, var(--primary-light) 76%, var(--bg-card)); color: var(--primary-hover); transform: translateY(-1px);
+}
+
+body.page-topics.page-topic-detail .btn-mini:disabled { cursor: not-allowed; opacity: 0.6; transform: none;
+}
+
+body.page-topics.page-topic-detail .text { white-space: pre-wrap; color: var(--text-secondary); font-size: 0.92rem;
+}
+
+body.page-topics.page-topic-detail .topic-summary .card-title { margin-bottom: 8px;
+}
+
+/* 桌面端时间轴在卡片内滚动，避免过长时间线拉高整页。 */
+body.page-topics.page-topic-detail .topic-timeline-card { display: flex; flex-direction: column; max-height: none; overflow: hidden;
+}
+
+body.page-topics.page-topic-detail .topic-timeline-card .card-head { flex: 0 0 auto; margin-bottom: 0;
+}
+
+body.page-topics.page-topic-detail .timeline { position: relative; min-height: 0; max-height: min(560px, calc(100vh - 176px)); margin-top: 10px; padding: 4px 10px 10px 8px; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--primary-color) 52%, var(--border-color)) color-mix(in srgb, var(--bg-soft) 72%, transparent);
+}
+
+body.page-topics.page-topic-detail .timeline::-webkit-scrollbar { width: 10px;
+}
+
+body.page-topics.page-topic-detail .timeline::-webkit-scrollbar-track { margin-block: 6px; border-radius: 999px; background: color-mix(in srgb, var(--bg-soft) 78%, transparent);
+}
+
+body.page-topics.page-topic-detail .timeline::-webkit-scrollbar-thumb { min-height: 48px; border: 2px solid var(--bg-card); border-radius: 999px; background: color-mix(in srgb, var(--primary-color) 48%, var(--border-color)); background-clip: padding-box;
+}
+
+body.page-topics.page-topic-detail .timeline::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--primary-color) 72%, var(--border-color)); background-clip: padding-box;
+}
+
+/* 时间轴节点：圆点、连接线与内容卡片使用同一视觉基线。 */
+body.page-topics.page-topic-detail .tl-item { position: relative; margin: 0; padding: 0 4px 18px 28px; border-left: 0;
+}
+
+body.page-topics.page-topic-detail .tl-item::after { content: ""; position: absolute; top: 17px; bottom: -2px; left: 8px; width: 2px; border-radius: 999px; background: linear-gradient(180deg, color-mix(in srgb, var(--primary-color) 62%, transparent), color-mix(in srgb, var(--primary-color) 18%, var(--border-color)));
+}
+
+body.page-topics.page-topic-detail .tl-item::before { content: ""; position: absolute; z-index: 1; top: 6px; left: 3px; width: 12px; height: 12px; border: 3px solid var(--bg-card); border-radius: 50%; background: var(--primary-color); box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-color) 14%, transparent);
+}
+
+body.page-topics.page-topic-detail .timeline .tl-item:last-child { padding-bottom: 4px; border-left: 0;
+}
+
+body.page-topics.page-topic-detail .tl-item:last-child::after { display: none;
+}
+
+body.page-topics.page-topic-detail .tl-item-head { min-height: 24px; margin-bottom: 7px;
+}
+
+body.page-topics.page-topic-detail .tl-time { margin: 0; padding: 3px 9px; border: 1px solid color-mix(in srgb, var(--primary-color) 16%, transparent); font-variant-numeric: tabular-nums; letter-spacing: 0.01em; line-height: 1.35;
+}
+
+body.page-topics.page-topic-detail .tl-content { padding: 11px 12px; border-color: color-mix(in srgb, var(--border-color) 78%, transparent); border-radius: 14px; background: color-mix(in srgb, var(--bg-soft) 62%, var(--bg-card)); box-shadow: 0 1px 2px color-mix(in srgb, var(--text-main) 5%, transparent); line-height: 1.68; transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+}
+
+body.page-topics.page-topic-detail .tl-item:hover .tl-content { border-color: color-mix(in srgb, var(--primary-color) 24%, var(--border-color)); background: color-mix(in srgb, var(--primary-light) 26%, var(--bg-card)); box-shadow: 0 7px 20px color-mix(in srgb, var(--text-main) 6%, transparent);
+}
+
+body.page-topics.page-topic-detail .tl-source { padding-left: 2px; line-height: 1.5;
+}
+
+body.page-topics.page-topic-detail .timeline-more { padding: 4px 4px 2px 28px;
+}
+
+body.page-topics.page-topic-detail .timeline-more-btn { min-height: 34px; padding: 0 13px;
+}
+
+@media (max-width: 1024px) {
+    body.page-topics.page-topic-detail .grid { gap: 16px;
+    }
+
+    body.page-topics.page-topic-detail .topic-timeline-card { position: relative; top: auto;
+    }
+
+    body.page-topics.page-topic-detail .timeline { max-height: 520px;
+    }
+}
+
+@media (max-width: 640px) {
+    body.page-topics.page-topic-detail .grid { margin-top: 14px; gap: 12px;
+    }
+
+    body.page-topics.page-topic-detail .card-head { flex-direction: row; align-items: center;
+    }
+
+    body.page-topics.page-topic-detail .timeline { max-height: none; padding: 4px 0 4px 2px; overflow: visible; scrollbar-gutter: auto;
+    }
+
+    body.page-topics.page-topic-detail .tl-item { padding-right: 0; padding-left: 25px;
+    }
+
+    body.page-topics.page-topic-detail .tl-item::after { left: 7px;
+    }
+
+    body.page-topics.page-topic-detail .tl-item::before { left: 2px;
+    }
 }
 
